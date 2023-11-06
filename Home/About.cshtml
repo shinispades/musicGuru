@@ -1,0 +1,17 @@
+﻿@model courseAssessment2.Models.Assessment
+@{
+    ViewBag.Title = "About";
+}
+@for(int i = 0; i < Model.questionTexts.Count; i++)
+            {
+                <h2>@Model.questionTexts[i].qText</h2>
+
+                for(int j = 0; j < Model.questionTexts[i].Answers.Count; j++)
+                {
+                    <label>
+                        @Html.RadioButtonFor(a => a.questionTexts[i].SelectedOption, Model.questionTexts[i].Answers[j].qAnswer)
+                        @Model.questionTexts[i].Answers[j].qAnswer
+                    </label>
+                    <br />
+                }
+            }

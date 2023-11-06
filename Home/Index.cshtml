@@ -1,0 +1,69 @@
+﻿@model courseAssessment2.Models.Assessment
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@*@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+
+        for (var i = 0; i < Model.questionTexts.Count; i++)
+        {
+            <h2>@Model.questionTexts[i].qText</h2>
+
+            for (var j = 0; j < Model.questionTexts[i].Answers.Count; j++)
+            {
+                <label>
+                    @Html.RadioButtonFor(model => model.questionTexts[i].SelectedOption, Model.questionTexts[i].Answers[j].qAnswer)
+                    @Model.questionTexts[i].Answers[j].qAnswer
+                </label>
+                <br />
+            }
+
+        }*@
+
+@*@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        if (Model != null)
+        {
+            for (var i = 0; i < Model.questionTexts.Count; i++)
+            {
+                <h2>@Model.questionTexts[i].qText</h2>
+
+                for (var j = 0; j < Model.questionTexts[i].Answers.Count; j++)
+                {
+                    <label>
+                        @Html.RadioButtonFor(a => a.questionTexts[i].SelectedOption, Model.questionTexts[i].Answers[j].qAnswer)
+                        @Model.questionTexts[i].Answers[j].qAnswer
+                    </label>
+                    <br />
+                }
+            }
+
+        }*@
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+
+    <h2>Question</h2>
+    @Html.TextBoxFor(m => m.questionTexts[0].qText, new { @class = "form form-control" });
+    <br />
+    @Html.TextBoxFor(m => m.questionTexts[0].Answers[0].qAnswer, new { @class = "form form-control" });
+    @Html.TextBoxFor(m => m.questionTexts[0].Answers[1].qAnswer, new { @class = "form form-control" });
+    @Html.TextBoxFor(m => m.questionTexts[0].Answers[2].qAnswer, new { @class = "form form-control" });
+    @Html.TextBoxFor(m => m.questionTexts[0].Answers[3].qAnswer, new { @class = "form form-control" });
+
+    <input type="submit" value="Submit" />
+
+}
+
+
+
+
+
+
+
+
+
+
+
